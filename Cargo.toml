@@ -1,0 +1,49 @@
+[package]
+name = "fenrir"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "fenrir"
+path = "src/main.rs"
+
+[dependencies]
+# clap — CLI argument parsing from a struct using the derive macro
+clap = { version = "4", features = ["derive"] }
+
+# rayon — data parallelism. Turns iterators into parallel iterators
+# with one method call. Automatically uses all available CPU cores.
+rayon = "1"
+
+# argon2 — Argon2id/Argon2i/Argon2d implementations in pure Rust
+argon2 = "0.5"
+
+# bcrypt — bcrypt implementation for cracking legacy hashes
+bcrypt = "0.15"
+
+# scrypt — scrypt implementation (common in crypto wallets)
+scrypt = "0.11"
+
+# indicatif — progress bars and speed counters
+indicatif = "0.17"
+
+# colored — ANSI terminal colors
+colored = "2"
+
+# atomic — atomic counters for tracking progress across threads
+# We use std::sync::atomic directly — no extra crate needed
+
+# crossbeam-channel — fast multi-producer multi-consumer channels
+# Used to stream wordlist candidates to the rayon thread pool
+crossbeam-channel = "0.5"
+
+# password-hash — common traits shared across hash crates
+password-hash = "0.5"
+
+[profile.release]
+# Maximum optimization for the crack loop
+opt-level = 3
+# Allow LLVM to vectorize and use ARM NEON/SVE on M4 Pro
+codegen-units = 1
+# Link-time optimization — whole-program optimization across crates
+lto = true
