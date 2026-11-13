@@ -24,8 +24,8 @@ Fenrir uses Rust and rayon to maximize CPU throughput on these specific algorith
 ## Install
 
 ```bash
-git clone https://github.com/mikelobocyber/fenrir
-cd fenrir
+git clone https://github.com/michaelwolfcyber/Fenrir.git
+cd Fenrir
 cargo build --release
 ```
 
@@ -279,11 +279,11 @@ Only use Fenrir against hashes you own or have explicit written authorization to
 
 ## Part of the WolfPack toolkit
 
-- SniffSnorf — async port scanner with threat surface analyst (github.com/mikelobocyber/SniffSnorf)
+- SniffSnorf — async port scanner with threat surface analyst (github.com/michaelwolfcyber/SniffSnorf)
 - Fenrir — CPU password cracker for memory-hard hashes
 
 ---
 
 ## Author
 
-github.com/mikelobocyber
+github.com/michaelwolfcyber
